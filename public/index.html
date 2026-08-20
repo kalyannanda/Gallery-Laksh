@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Laksh Gallery</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Laksh <span>Gallery</span></a>
+    <nav>
+      <a class="nav-link active" href="/">Collection</a>
+      <a class="nav-cta" href="/upload">Add image <span aria-hidden="true">+</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div>
+        <p class="eyebrow">A living collection</p>
+        <h1>Moments worth<br><em>keeping.</em></h1>
+      </div>
+      <p class="intro-copy">A quiet place for the photographs that make a day feel bigger.</p>
+    </section>
+    <div class="collection-heading">
+      <h2>All images</h2>
+      <span id="imageCount">Loading...</span>
+    </div>
+    <p class="empty-state" id="emptyState" hidden>No images yet. Add the first one to begin the collection.</p>
+    <section id="featured">
+      <div class="grid" id="large"></div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="grid" id="medium"></div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="grid" id="small"></div>
+    </section>
+  </main>
+
+  <script src="/public/gallery.js"></script>
+</body>
+</html>

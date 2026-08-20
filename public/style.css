@@ -1,0 +1,42 @@
+:root { --ink:#18231f; --muted:#6f7974; --paper:#f5f4ef; --card:#fffdf8; --accent:#d96745; --line:#dddcd3; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); background:var(--paper); font-family:Georgia, 'Times New Roman', serif; }
+.site-header { max-width:1180px; margin:auto; padding:28px 32px; display:flex; align-items:center; justify-content:space-between; }
+.brand { color:var(--ink); font-size:22px; font-weight:bold; text-decoration:none; letter-spacing:.02em; }
+.brand span { color:var(--accent); font-style:italic; font-weight:normal; }
+nav { display:flex; align-items:center; gap:26px; font-family:Arial, sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:.12em; }
+nav a { color:var(--ink); text-decoration:none; }
+.nav-link { opacity:.55; }
+.nav-link.active { opacity:1; }
+.nav-cta { padding:12px 16px; color:#fff; background:var(--ink); border-radius:2px; }
+.nav-cta span { margin-left:8px; color:#f6b298; font-size:16px; }
+main { max-width:1180px; margin:auto; padding:56px 32px 90px; }
+.intro { display:flex; justify-content:space-between; align-items:end; padding-bottom:70px; border-bottom:1px solid var(--line); }
+.eyebrow { margin:0 0 18px; color:var(--accent); font-family:Arial, sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:.2em; }
+.intro h1 { margin:0; font-size:clamp(50px, 8vw, 96px); line-height:.88; font-weight:normal; letter-spacing:-.04em; }
+.intro h1 em { color:var(--accent); font-weight:normal; }
+.intro-copy { max-width:230px; margin:0 5% 5px 24px; color:var(--muted); font-size:17px; line-height:1.45; }
+.collection-heading { display:flex; justify-content:space-between; align-items:baseline; margin:36px 0 20px; }
+.collection-heading h2 { margin:0; font-size:25px; font-weight:normal; }
+.collection-heading span { color:var(--muted); font-family:Arial, sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:.12em; }
+.grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; }
+#large { grid-template-columns:repeat(2, 1fr); }
+.gallery-section { margin-top:16px; }
+.image-card { min-width:0; overflow:hidden; background:var(--card); border:1px solid var(--line); }
+.image-card img { display:block; width:100%; aspect-ratio:1.2; object-fit:cover; }
+#large .image-card img { aspect-ratio:1.55; }
+.image-details { position:relative; display:flex; flex-direction:column; gap:6px; padding:14px 15px 16px; }
+.image-details strong { overflow:hidden; padding-right:55px; text-overflow:ellipsis; white-space:nowrap; font-size:15px; font-weight:normal; }
+.image-details span { color:var(--muted); font-family:Arial, sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:.08em; }
+.delete-button { position:absolute; right:12px; top:14px; padding:0; border:0; color:var(--accent); background:transparent; cursor:pointer; font-family:Arial, sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:.08em; }
+.delete-button:hover { text-decoration:underline; }
+.delete-button:disabled { opacity:.45; cursor:wait; }
+.empty-state { padding:45px; border:1px dashed #c9c8bd; color:var(--muted); text-align:center; }
+.upload-main { max-width:620px; margin:55px auto; padding:42px; background:var(--card); border:1px solid var(--line); }
+.upload-main h1 { margin-top:0; font-size:42px; font-weight:normal; }
+form { display:flex; flex-direction:column; gap:16px; font-family:Arial, sans-serif; }
+label { color:var(--muted); font-size:13px; }
+input[type=file] { padding:18px; border:1px dashed #c9c8bd; background:var(--paper); }
+button { padding:13px 18px; border:0; border-radius:2px; color:#fff; background:var(--ink); cursor:pointer; font-family:Arial, sans-serif; }
+#message { margin-top:18px; color:var(--accent); font-family:Arial, sans-serif; font-size:13px; }
+@media (max-width:700px) { .site-header { padding:22px 20px; } nav { gap:14px; font-size:10px; } .nav-link { display:none; } main { padding:36px 20px 60px; } .intro { display:block; padding-bottom:44px; } .intro-copy { margin:30px 0 0; } .grid, #large { grid-template-columns:repeat(2, 1fr); gap:10px; } .image-details { padding:11px; } .delete-button { top:11px; right:9px; } .upload-main { margin:25px 20px; padding:26px; } }

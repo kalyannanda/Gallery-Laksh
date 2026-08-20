@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Upload - Laksh Gallery</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Laksh <span>Gallery</span></a>
+    <nav>
+      <a class="nav-link" href="/">Collection</a>
+      <a class="nav-cta" href="/upload">Add image <span aria-hidden="true">+</span></a>
+    </nav>
+  </header>
+
+  <main class="upload-main">
+    <p class="eyebrow">Add to the collection</p>
+    <h1>Upload an image</h1>
+    <form id="uploadForm">
+      <label for="imageInput">Choose a JPEG, PNG, or WebP image</label>
+      <input type="file" name="image" id="imageInput" accept="image/*" required />
+      <button type="submit">Upload</button>
+    </form>
+    <div id="message"></div>
+  </main>
+
+  <script>
+    const form = document.getElementById('uploadForm');
+    const msg = document.getElementById('message');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fileEl = document.getElementById('imageInput');
+      if (!fileEl.files.length) return;
+      const fd = new FormData();
+      fd.append('image', fileEl.files[0]);
+      msg.textContent = 'Uploading...';
+      try {
+        const res = await fetch('/upload', { method: 'POST', body: fd });
+        const j = await res.json();
+        if (j.success) {
+          msg.textContent = 'Uploaded successfully';
+          setTimeout(() => window.location.href = '/', 800);
+        } else {
+          msg.textContent = j.error || 'Upload failed';
+        }
+      } catch (err) {
+        msg.textContent = 'Upload error';
+      }
+    });
+  </script>
+</body>
+</html>
